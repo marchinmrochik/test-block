@@ -58,8 +58,8 @@ body {
   }
 
   &__link {
-    @include text-font('Apercu Pro', bold);
-    @include text-style(14px, 21px, 0.23em, $white);
+    @include text-font('Apercu Pro Bold', bold);
+    @include text-style(14px, 21px, 0.33em, $white);
     text-transform: uppercase;
     text-decoration: none!important;
 
@@ -74,7 +74,7 @@ body {
         content: "";
         display: block;
         position: absolute;
-        background: url("assets/active-tab.svg") no-repeat center;
+        background: url("../assets/active-tab.svg") no-repeat center;
         width: 259px;
         height: 18px;
         top: 25px;
