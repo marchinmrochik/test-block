@@ -4,6 +4,11 @@ import 'slick-carousel';
 
 $( document ).ready(function() {
     const tabLink = $('.tab__link'), tabContent = $('.tab__content');
+    const slickDefaultSettings = {
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1
+    };
 
     tabLink.on('click', function (e) {
         e.preventDefault();
@@ -17,7 +22,6 @@ $( document ).ready(function() {
         }
     });
 
-    $('.slider.slider_room').slick({
-
-    })
+    $('.slider_room').slick(slickDefaultSettings);
+    $('.slider_preview').slick(slickDefaultSettings);
 });

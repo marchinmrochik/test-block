@@ -45,9 +45,9 @@ body {
 
 .tabs {
   max-width: 775px;
-  margin: auto;
   padding: 0;
   display: flex;
+  margin: auto auto 105px;
 }
 
 .tab {
@@ -81,5 +81,22 @@ body {
         left: -2px;
       }
     }
+  }
+}
+
+.btn {
+  @include text-font('Apercu Pro', normal);
+  @include text-style(20px, 21px, 0.11em, $white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none!important;
+
+  &_book-residence {
+    @include btn(496px, 79px, $muddy-waters);
+  }
+
+  img[alt="white arrow"] {
+    margin-left: 34px;
   }
 }

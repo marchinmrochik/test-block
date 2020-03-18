@@ -9,3 +9,9 @@
   letter-spacing: $ls;
   color: $color;
 }
+
+@mixin btn($width, $height, $bg) {
+  width: $width;
+  height: $height;
+  background: $bg;
+}

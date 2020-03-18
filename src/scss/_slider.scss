@@ -14,6 +14,82 @@
   font-weight: normal;
   font-style: normal;
 
-  src: url('./fonts/slick.eot');
-  src: url('./fonts/slick.eot?#iefix') format('embedded-opentype'), url('./fonts/slick.woff') format('woff'), url('./fonts/slick.ttf') format('truetype'), url('./fonts/slick.svg#slick') format('svg');
+  src: url('../fonts/slick.eot');
+  src: url('../fonts/slick.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/slick.woff') format('woff'),
+  url('../fonts/slick.ttf') format('truetype'),
+  url('../fonts/slick.svg#slick') format('svg');
+}
+
+.slider {
+
+  &__item {
+    display: flex!important;
+  }
+
+  &_preview {
+    width: 50%;
+  }
+
+  &_description {
+    width: 50%;
+
+    &__block {
+      max-width: 715px;
+      margin-top: 40px;
+      margin-left: auto;
+      margin-right: 72px;
+    }
+
+    &__title_h3 {
+      margin-bottom: 23px;
+      margin-top: 0;
+    }
+
+    &__text_normal {
+      padding-right: 15px;
+    }
+  }
+}
+
+.service {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  margin-bottom: 5px;
+
+  &__item {
+    display: flex;
+    justify-items: center;
+    width: 40%;
+    margin-bottom: 36px;
+
+    &:nth-child(2n+1) {
+      width: 60%;
+    }
+
+    span {
+      @extend .text_normal;
+      @include text-style(10px, 10px, 0.33em, $gray);
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      margin-left: 28px;
+    }
+  }
+}
+
+.preview__img {
+  height: 0;
+  overflow: hidden;
+  padding-top: 865px / 951px * 100%;
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
