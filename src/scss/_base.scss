@@ -1,5 +1,84 @@
-@import "normalize";
-
 body {
   background-color: $night-rider;
+}
+
+.section {
+  &_residence {
+    padding-top: 134px;
+    padding-bottom: 176px;
+    background: url("../assets/bg-residence.png") no-repeat center;
+  }
+}
+
+.block-title {
+  margin: auto;
+}
+
+.residence {
+  &__block-title {
+    margin-bottom: 70px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  &__title_h2 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+
+    &:after {
+      content: "";
+      display: block;
+      width: 108px;
+      height: 1px;
+      background-color: $white;
+      margin: 25px 73px 0;
+    }
+  }
+
+  &__text {
+    max-width: 441px;
+    margin: 0;
+  }
+}
+
+.tabs {
+  max-width: 775px;
+  margin: auto;
+  padding: 0;
+  display: flex;
+}
+
+.tab {
+  &__item {
+    position: relative;
+    width: 259px;
+    text-align: center;
+  }
+
+  &__link {
+    @include text-font('Apercu Pro', bold);
+    @include text-style(14px, 21px, 0.23em, $white);
+    text-transform: uppercase;
+    text-decoration: none!important;
+
+    &:hover {
+      color: $muddy-waters;
+    }
+
+    &_active {
+      color: $muddy-waters;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        background: url("assets/active-tab.svg") no-repeat center;
+        width: 259px;
+        height: 18px;
+        top: 25px;
+      }
+    }
+  }
 }

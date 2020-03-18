@@ -1,6 +1,7 @@
 const { src, dest, series, parallel, watch } = require('gulp');
 const htmlmin = require('gulp-htmlmin');
 const sass = require('gulp-sass');
+const replace = require('gulp-replace');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCss = require('gulp-clean-css');
 const rename = require('gulp-rename');
@@ -21,6 +22,7 @@ function css() {
         .pipe(sass({
             includePaths: require('node-normalize-scss').includePaths
         }))
+        .pipe(replace('url("../', 'url("./'))
         .pipe(autoprefixer())
         .pipe(cleanCss())
         .pipe(rename('style.css'))
@@ -44,8 +46,16 @@ function js() {
 }
 function images() {
     return src('src/assets/*')
+        .pipe(replace('url("../', 'url("./'))
         .pipe(imagemin())
         .pipe(dest('build/assets'))
+        .pipe(browserSync.stream());
+}
+function fonts() {
+    return src('src/fonts/*')
+        .pipe(replace('url("../', 'url("./'))
+        .pipe(imagemin())
+        .pipe(dest('build/fonts'))
         .pipe(browserSync.stream());
 }
 function clean(){
@@ -59,9 +69,10 @@ function dev(){
     watch('src/scss/*.scss', css);
     watch('src/js/**/*.js', js);
     watch('src/assets/*', images);
+    watch('src/fonts/*', fonts);
 }
 function build(){
-    return series(clean, parallel(js, css), images, html);
+    return series(clean, parallel(js, css), images, fonts, html);
 }
 exports.build = build();
 exports.dev = series(clean, build(), dev);

@@ -1,6 +1,38 @@
-@import url('https://fonts.googleapis.com/css?family=Advent+Pro:400,700|Playfair+Display:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700&display=swap');
 
-body {
-  font-family: 'Advent Pro', sans-serif;
-  font-family: 'Playfair Display', serif;
+@font-face {
+  font-family: 'Apercu Pro';
+  src: url('../fonts/ApercuPro.eot');
+  src:  url('../fonts/ApercuPro.woff') format('woff'),
+  url('../fonts/ApercuPro.ttf') format('truetype'),
+  url('../fonts/ApercuPro.svg') format('svg'),
+  url('../fonts/ApercuPro.eot') format('embedded-opentype');
+}
+
+@font-face {
+  font-family: 'Apercu Pro Bold';
+  src: url('../fonts/ApercuPro-Bold.eot');
+  src:  url('../fonts/ApercuPro-Bold.woff') format('woff'),
+  url('../fonts/ApercuPro-Bold.ttf') format('truetype'),
+  url('../fonts/ApercuPro-Bold.svg') format('svg'),
+  url('../fonts/ApercuPro-Bold.eot') format('embedded-opentype');
+}
+
+.title {
+  @include text-font('Playfair Display', bold);
+
+  &_h2 {
+    @include text-style(64px, 74px, 0.03em, $white);
+  }
+
+  &_h3 {
+    @include text-style(50px, 72px, 0.03em, $white);
+  }
+}
+
+.text {
+  &_normal {
+    @include text-font('Apercu Pro', normal);
+    @include text-style(14px, 24px, 0.11em, $gray);
+  }
 }
