@@ -32,7 +32,9 @@ $( document ).ready(function() {
         speed: 300,
         slidesToShow: 1,
         dots: true,
-        swipe: false
+        swipe: false,
+        prevArrow: '<button class="slide__arrow slide__arrow_prev">Предыдущий номер</button>',
+        nextArrow: '<button class="slide__arrow slide__arrow_next">Следующий номер</button>',
     });
 
     $('.slider_preview').slick({

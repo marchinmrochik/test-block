@@ -100,8 +100,10 @@
   }
 
   &_room {
-    .slick-dots {
-      display: none!important;
+    .slick {
+      &-dots {
+        display: none !important;
+      }
     }
   }
 }
@@ -165,6 +167,41 @@
   &_all {
     @include text-style(50px, 151px, 0.33em, $white);
     margin-left: 40px;
+  }
+
+  &__arrow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include text-font('Apercu Pro Bold', bold);
+    @include text-style(16px, 17px, 0.14em, $white);
+    text-transform: uppercase;
+    align-items: center;
+    border: none;
+    background: none;
+    position: absolute;
+    right: 16%;
+    top: 81%;
+    z-index: 10;
+    cursor: pointer;
+    outline: none!important;
+
+    &:after {
+      content: "";
+      display: block;
+      background: url(../assets/arrow-slider-room.svg) no-repeat;
+      width: 218px;
+      height: 23px;
+      margin-top: 6px;
+    }
+
+    &_next {
+      right: 2.7%;
+
+      &:after {
+        transform: scale(-1, 1);
+      }
+    }
   }
 }
 .preview__img {
