@@ -4,7 +4,7 @@
 /* Slider */
 .slick-loading .slick-list
 {
-  background: #fff;
+  background: $white;
 }
 
 /* Icons */
@@ -48,6 +48,14 @@
       width: 60%;
     }
 
+    @media (max-width: 767px) {
+      width: 75%;
+    }
+
+    @media (max-width: 574px) {
+      width: calc(100% - 32px);
+    }
+
     .slick {
       &-prev {
         left: initial;
@@ -62,6 +70,14 @@
 
         @media (max-width: 1700px) {
           top: 200px;
+        }
+
+        @media (max-width: 767px) {
+          top: 100px;
+        }
+
+        @media (max-width: 574px) {
+          display: none!important;
         }
 
         &:before {
@@ -91,6 +107,14 @@
 
         @media (max-width: 1700px) {
           top: 281px;
+        }
+
+        @media (max-width: 767px) {
+          top: 181px;
+        }
+
+        @media (max-width: 574px) {
+          display: none!important;
         }
 
         &:before {
@@ -146,6 +170,10 @@
         max-width: calc(100% - 64px);
         margin-right: auto;
       }
+
+      @media (max-width: 574px) {
+        max-width: calc(100% - 32px);
+      }
     }
 
     &__title_h3 {
@@ -155,6 +183,10 @@
 
     &__text_normal {
       padding-right: 15px;
+
+      @media (max-width: 574px) {
+        padding-right: 0;
+      }
     }
   }
 
@@ -183,8 +215,16 @@
     width: 40%;
     margin-bottom: 36px;
 
+    @media (max-width: 574px) {
+      width: 100%;
+    }
+
     &:nth-child(2n+1) {
       width: 60%;
+
+      @media (max-width: 574px) {
+        width: 100%;
+      }
     }
 
     span {
@@ -194,6 +234,14 @@
       align-items: center;
       text-transform: uppercase;
       margin-left: 28px;
+
+      @media (max-width: 574px) {
+        margin-left: 15px;
+      }
+
+      @media (max-width: 374px) {
+        margin-left: 12px;
+      }
     }
   }
 }
@@ -233,6 +281,10 @@
     display: block;
     text-align: center;
   }
+
+  @media (max-width: 574px) {
+    bottom: -25%;
+  }
 }
 
 .slide {
@@ -240,18 +292,31 @@
     @include text-style(99.6px, 151px, 0.33em, $white);
     position: relative;
 
+    @media (max-width: 574px) {
+      font-size: 75px;
+    }
+
     &:after {
       content: "/";
       font-size: 50px;
       position: absolute;
       top: 10px;
       right: -50px;
+
+      @media (max-width: 574px) {
+        font-size: 40px;
+        top: -12px;
+      }
     }
   }
 
   &_all {
     @include text-style(50px, 151px, 0.33em, $white);
     margin-left: 40px;
+
+    @media (max-width: 574px) {
+      font-size: 35px;
+    }
   }
 
   &__arrow {
@@ -307,6 +372,12 @@
 
       @media (max-width: 991px) {
         right: 32px;
+        padding: 0;
+      }
+
+      @media (max-width: 574px) {
+        right: 16px;
+        top: calc(100% + 80px);
       }
 
       &:after {
@@ -317,6 +388,11 @@
     &_prev {
       @media (max-width: 991px) {
         left: 32px;
+        padding: 0;
+      }
+
+      @media (max-width: 574px) {
+        left: 16px;
       }
     }
   }

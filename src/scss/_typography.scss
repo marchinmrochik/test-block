@@ -21,10 +21,20 @@
 
   &_h2 {
     @include text-style(64px, 74px, 0.03em, $white);
+
+    @media (max-width: 574px) {
+      font-size: 45px;
+    }
   }
 
   &_h3 {
     @include text-style(50px, 72px, 0.03em, $white);
+
+    @media (max-width: 574px) {
+      font-size: 40px;
+      line-height: normal;
+      text-align: center;
+    }
   }
 }
 

@@ -11,6 +11,10 @@ body {
     @media (max-width: 991px) {
       padding-top: 100px;
     }
+
+    @media (max-width: 767px) {
+      padding-top: 50px;
+    }
   }
 }
 
@@ -78,6 +82,16 @@ body {
     max-width: 750px;
     margin-bottom: 75px;
   }
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 767px) {
+    margin-bottom: 25px;
+  }
 }
 
 .tab {
@@ -85,6 +99,10 @@ body {
     position: relative;
     width: 259px;
     text-align: center;
+
+    @media (max-width: 767px) {
+      margin-bottom: 25px;
+    }
   }
 
   &__link {
@@ -130,6 +148,10 @@ body {
   align-items: center;
   text-decoration: none!important;
 
+  @media (max-width: 574px) {
+    font-size: 16px;
+  }
+
   &_book-residence {
     @include btn(496px, 79px, $muddy-waters);
     
@@ -137,9 +159,17 @@ body {
       width: 420px;
       height: 55px;
     }
+
+    @media (max-width: 574px) {
+      width: 100%;
+    }
   }
 
   img[alt="white arrow"] {
     margin-left: 34px;
+
+    @media (max-width: 574px) {
+      margin-left: 10px;
+    }
   }
 }
