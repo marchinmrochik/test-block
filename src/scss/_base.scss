@@ -82,6 +82,10 @@ body {
       }
     }
   }
+
+  &__content {
+    position: relative;
+  }
 }
 
 .btn {

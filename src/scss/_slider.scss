@@ -29,6 +29,54 @@
 
   &_preview {
     width: 50%;
+
+    .slick {
+      &-prev {
+        left: initial;
+        right: -38px;
+        top: 311px;
+        width: 57.55px;
+        height: 57.55px;
+        border-right: 1px solid $gray;
+        border-bottom: 1px solid $gray;
+        transform: rotate(-45deg);
+        z-index: 10;
+
+        &:before {
+          content: "";
+          display: block;
+          opacity: 1;
+          background: url("../assets/ic-long-arrow-slider.svg") no-repeat center;
+          width: 38px;
+          height: 8px;
+          transform: rotate(45deg);
+          position: absolute;
+          top: 16px;
+        }
+      }
+
+      &-next {
+        width: 57.55px;
+        height: 57.55px;
+        border: 1px solid $muddy-waters;
+        transform: rotate(225deg);
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        top: 392px;
+        right: -38px;
+
+        &:before {
+          content: "";
+          display: block;
+          opacity: 1;
+          background: url("../assets/ic-arrow-slider.svg") no-repeat center;
+          width: 10px;
+          height: 10px;
+          transform: rotate(135deg);
+        }
+      }
+    }
   }
 
   &_description {
@@ -50,6 +98,16 @@
       padding-right: 15px;
     }
   }
+
+  &_room {
+    .slick-dots {
+      display: none!important;
+    }
+  }
+}
+
+.slick-dots li.slick-active button:before {
+  color: white;
 }
 
 .service {
@@ -79,6 +137,36 @@
   }
 }
 
+.paging-info {
+  position: absolute;
+  color: $white;
+  bottom: -8.5%;
+  z-index: 999;
+  right: 44.5%;
+  margin: 0;
+  @include text-font('Playfair Display', bold);
+  text-transform: uppercase;
+}
+
+.slide {
+  &_current {
+    @include text-style(99.6px, 151px, 0.33em, $white);
+    position: relative;
+
+    &:after {
+      content: "/";
+      font-size: 50px;
+      position: absolute;
+      top: 10px;
+      right: -50px;
+    }
+  }
+
+  &_all {
+    @include text-style(50px, 151px, 0.33em, $white);
+    margin-left: 40px;
+  }
+}
 .preview__img {
   height: 0;
   overflow: hidden;
