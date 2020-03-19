@@ -25,10 +25,28 @@
 
   &__item {
     display: flex!important;
+
+    @media (max-width: 1199px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   &_preview {
     width: 50%;
+
+    @media (max-width: 1700px) {
+      width: 40%;
+    }
+
+    @media (max-width: 1365px) {
+      width: 50%;
+    }
+
+    @media (max-width: 991px) {
+      width: 60%;
+    }
 
     .slick {
       &-prev {
@@ -41,6 +59,10 @@
         border-bottom: 1px solid $gray;
         @include rotate(-45deg);
         z-index: 10;
+
+        @media (max-width: 1700px) {
+          top: 200px;
+        }
 
         &:before {
           content: "";
@@ -67,6 +89,10 @@
         top: 392px;
         right: -38px;
 
+        @media (max-width: 1700px) {
+          top: 281px;
+        }
+
         &:before {
           content: "";
           display: block;
@@ -83,11 +109,43 @@
   &_description {
     width: 50%;
 
+    @media (max-width: 1700px) {
+      width: 60%;
+    }
+    
+    @media (max-width: 1365px) {
+      width: 43%;
+      margin-left: auto;
+    }
+
+    @media (max-width: 1199px) {
+      width: 100%;
+      margin-right: auto;
+    }
+
     &__block {
       max-width: 715px;
       margin-top: 40px;
       margin-left: auto;
       margin-right: 72px;
+
+      @media (max-width: 1700px) {
+        margin-top: 0;
+        margin-right: 40px;
+      }
+
+      @media (max-width: 1440px) {
+        margin-right: 20px;
+      }
+
+      @media (max-width: 1365px) {
+        margin-right: 0;
+      }
+
+      @media (max-width: 1199px) {
+        max-width: calc(100% - 64px);
+        margin-right: auto;
+      }
     }
 
     &__title_h3 {
@@ -144,11 +202,37 @@
   position: absolute;
   color: $white;
   bottom: -8.5%;
-  z-index: 999;
+  z-index: 10;
   right: 44.5%;
   margin: 0;
   @include text-font('Playfair Display', bold);
   text-transform: uppercase;
+
+  @media (max-width: 1700px) {
+    bottom: -11.5%;
+    right: 54%;
+  }
+
+  @media (max-width: 1400px) {
+    bottom: -13.5%;
+  }
+
+  @media (max-width: 1365px) {
+    bottom: -21%;
+    right: 62%;
+  }
+
+  @media (max-width: 1199px) {
+    right: 32px;
+  }
+
+  @media (max-width: 991px) {
+    right: 0;
+    left: 0;
+    bottom: -23%;
+    display: block;
+    text-align: center;
+  }
 }
 
 .slide {
@@ -187,6 +271,28 @@
     cursor: pointer;
     outline: none!important;
 
+    @media (max-width: 1700px) {
+      right: 20%;
+      top: 90%;
+    }
+
+    @media (max-width: 1550px) {
+      top: 91.5%;
+    }
+
+    @media (max-width: 1365px) {
+      right: 25%;
+      top: 94.5%;
+    }
+
+    @media (max-width: 1024px) {
+      right: 28%;
+    }
+
+    @media (max-width: 991px) {
+      top: calc(100% + 24px);
+    }
+
     &:after {
       content: "";
       display: block;
@@ -199,8 +305,18 @@
     &_next {
       right: 2.7%;
 
+      @media (max-width: 991px) {
+        right: 32px;
+      }
+
       &:after {
         transform: scale(-1, 1);
+      }
+    }
+
+    &_prev {
+      @media (max-width: 991px) {
+        left: 32px;
       }
     }
   }

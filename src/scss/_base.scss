@@ -7,6 +7,10 @@ body {
     padding-top: 134px;
     padding-bottom: 176px;
     background: url("../assets/bg-residence.png") no-repeat center;
+
+    @media (max-width: 991px) {
+      padding-top: 100px;
+    }
   }
 }
 
@@ -20,12 +24,25 @@ body {
     display: flex;
     align-items: flex-end;
     justify-content: center;
+
+    @media (max-width: 1199px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media (max-width: 991px) {
+      margin-bottom: 35px;
+    }
   }
 
   &__title_h2 {
     margin: 0;
     display: flex;
     align-items: center;
+
+    @media (max-width: 1199px) {
+      flex-direction: column;
+    }
 
     &:after {
       content: "";
@@ -34,12 +51,20 @@ body {
       height: 1px;
       background-color: $white;
       margin: 25px 73px 0;
+
+      @media (max-width: 1199px) {
+        margin-bottom: 10px;
+      }
     }
   }
 
   &__text {
     max-width: 441px;
     margin: 0;
+
+    @media (max-width: 1199px) {
+      text-align: center;
+    }
   }
 }
 
@@ -48,6 +73,11 @@ body {
   padding: 0;
   display: flex;
   margin: auto auto 105px;
+
+  @media (max-width: 991px) {
+    max-width: 750px;
+    margin-bottom: 75px;
+  }
 }
 
 .tab {
@@ -79,6 +109,10 @@ body {
         height: 18px;
         top: 25px;
         left: -2px;
+
+        @media (max-width: 991px) {
+          left: -8px;
+        }
       }
     }
   }
@@ -98,6 +132,11 @@ body {
 
   &_book-residence {
     @include btn(496px, 79px, $muddy-waters);
+    
+    @media (max-width: 1550px) {
+      width: 420px;
+      height: 55px;
+    }
   }
 
   img[alt="white arrow"] {

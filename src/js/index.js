@@ -46,4 +46,5 @@ $( document ).ready(function() {
     });
 
     sliderRoom.slick('refresh');
+    sliderPreview.slick('refresh');
 });
