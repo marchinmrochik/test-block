@@ -4,7 +4,7 @@ import 'slick-carousel';
 
 $( document ).ready(function() {
     const tabLink = $('.tab__link'), tabContent = $('.tab__content'), sliderRoom = $('.slider_room'),
-    currentSlideIndex = $('.slide_current'), numSlide = $('.slide_all');
+    sliderPreview = $('.slider_preview'), currentSlideIndex = $('.slide_current'), numSlide = $('.slide_all');
 
     sliderRoom.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
         if(!slick.$dots){
@@ -24,6 +24,8 @@ $( document ).ready(function() {
             _this.addClass('tab__link_active');
             tabContent.hide();
             $(idContent).show();
+            sliderRoom.slick('refresh');
+            sliderPreview.slick('refresh');
         }
     });
 
@@ -37,9 +39,11 @@ $( document ).ready(function() {
         nextArrow: '<button class="slide__arrow slide__arrow_next">Следующий номер</button>',
     });
 
-    $('.slider_preview').slick({
+    sliderPreview.slick({
         infinite: true,
         speed: 300,
         slidesToShow: 1,
     });
+
+    sliderRoom.slick('refresh');
 });
